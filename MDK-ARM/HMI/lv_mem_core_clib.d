@@ -1,0 +1,14 @@
+hmi\lv_mem_core_clib.o: ..\Middlewares\LVGL\src\stdlib\clib\lv_mem_core_clib.c
+hmi\lv_mem_core_clib.o: ..\Middlewares\LVGL\src\stdlib\clib\../lv_mem.h
+hmi\lv_mem_core_clib.o: ..\Middlewares\LVGL\src\stdlib\clib\../../lv_conf_internal.h
+hmi\lv_mem_core_clib.o: ..\Middlewares\LVGL\src\stdlib\clib\../../lv_conf_kconfig.h
+hmi\lv_mem_core_clib.o: ../Middlewares/LVGL/src/core/../../lv_conf.h
+hmi\lv_mem_core_clib.o: ../User/app_mem_layout.h
+hmi\lv_mem_core_clib.o: ..\Middlewares\LVGL\src\stdlib\clib\../lv_string.h
+hmi\lv_mem_core_clib.o: ..\Middlewares\LVGL\src\stdlib\clib\../../misc/lv_types.h
+hmi\lv_mem_core_clib.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdint.h
+hmi\lv_mem_core_clib.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stddef.h
+hmi\lv_mem_core_clib.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdbool.h
+hmi\lv_mem_core_clib.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\inttypes.h
+hmi\lv_mem_core_clib.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\limits.h
+hmi\lv_mem_core_clib.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdarg.h

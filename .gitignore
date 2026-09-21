@@ -1,0 +1,26 @@
+# Keil MDK 编译产物
+MDK-ARM/*.o
+MDK-ARM/*.axf
+MDK-ARM/*.htm
+MDK-ARM/*.lnp
+MDK-ARM/*.map
+MDK-ARM/*.lst
+MDK-ARM/*.build_log.htm
+MDK-ARM/*.crf
+MDK-ARM/*.d
+MDK-ARM/*.dep
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+MDK-ARM/Listing/
+MDK-ARM/Objects/
+MDK-ARM/Output/
+
+# VS Code
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# STM32CubeMX 临时文件
+.mxproject

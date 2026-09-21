@@ -1,0 +1,5 @@
+hmi\lv_draw_buf_convert_helium.o: ..\Middlewares\LVGL\src\draw\convert\helium\lv_draw_buf_convert_helium.c
+hmi\lv_draw_buf_convert_helium.o: ..\Middlewares\LVGL\src\draw\convert\helium\../../../lv_conf_internal.h
+hmi\lv_draw_buf_convert_helium.o: ..\Middlewares\LVGL\src\draw\convert\helium\../../../lv_conf_kconfig.h
+hmi\lv_draw_buf_convert_helium.o: ../Middlewares/LVGL/src/core/../../lv_conf.h
+hmi\lv_draw_buf_convert_helium.o: ../User/app_mem_layout.h

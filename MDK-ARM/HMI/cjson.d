@@ -1,0 +1,10 @@
+hmi\cjson.o: ..\Middlewares\cJSON\cJSON.c
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\string.h
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdio.h
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\math.h
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdlib.h
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\limits.h
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\ctype.h
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\float.h
+hmi\cjson.o: ..\Middlewares\cJSON\cJSON.h
+hmi\cjson.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stddef.h

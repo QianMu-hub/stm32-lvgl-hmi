@@ -1,0 +1,16 @@
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\lv_draw_vg_lite_fill.c
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\../../misc/lv_area_private.h
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\../../misc/lv_area.h
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\../../misc/../lv_conf_internal.h
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\../../misc/../lv_conf_kconfig.h
+hmi\lv_draw_vg_lite_fill.o: ../Middlewares/LVGL/src/core/../../lv_conf.h
+hmi\lv_draw_vg_lite_fill.o: ../User/app_mem_layout.h
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\../../misc/lv_types.h
+hmi\lv_draw_vg_lite_fill.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdint.h
+hmi\lv_draw_vg_lite_fill.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stddef.h
+hmi\lv_draw_vg_lite_fill.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdbool.h
+hmi\lv_draw_vg_lite_fill.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\inttypes.h
+hmi\lv_draw_vg_lite_fill.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\limits.h
+hmi\lv_draw_vg_lite_fill.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdarg.h
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\../../misc/lv_math.h
+hmi\lv_draw_vg_lite_fill.o: ..\Middlewares\LVGL\src\draw\vg_lite\lv_draw_vg_lite.h

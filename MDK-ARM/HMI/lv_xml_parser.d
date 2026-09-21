@@ -1,0 +1,13 @@
+hmi\lv_xml_parser.o: ..\Middlewares\LVGL\src\others\xml\lv_xml_parser.c
+hmi\lv_xml_parser.o: ..\Middlewares\LVGL\src\others\xml\lv_xml.h
+hmi\lv_xml_parser.o: ..\Middlewares\LVGL\src\others\xml\../../misc/lv_types.h
+hmi\lv_xml_parser.o: ..\Middlewares\LVGL\src\others\xml\../../misc/../lv_conf_internal.h
+hmi\lv_xml_parser.o: ..\Middlewares\LVGL\src\others\xml\../../misc/../lv_conf_kconfig.h
+hmi\lv_xml_parser.o: ../Middlewares/LVGL/src/core/../../lv_conf.h
+hmi\lv_xml_parser.o: ../User/app_mem_layout.h
+hmi\lv_xml_parser.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdint.h
+hmi\lv_xml_parser.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stddef.h
+hmi\lv_xml_parser.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdbool.h
+hmi\lv_xml_parser.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\inttypes.h
+hmi\lv_xml_parser.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\limits.h
+hmi\lv_xml_parser.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdarg.h
