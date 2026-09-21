@@ -1,5 +1,5 @@
-hmi\json_analysis.o: ..\App\json_analysis.c
-hmi\json_analysis.o: ..\App\json_analysis.h
+hmi\json_analysis.o: ..\User\json_analysis.c
+hmi\json_analysis.o: ..\User\json_analysis.h
 hmi\json_analysis.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdio.h
 hmi\json_analysis.o: ../Middlewares/cJSON/cJSON.h
 hmi\json_analysis.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stddef.h

@@ -1,4 +1,4 @@
-hmi\date_to_timestamp.o: ..\App\date_to_timestamp.c
+hmi\date_to_timestamp.o: ..\User\date_to_timestamp.c
 hmi\date_to_timestamp.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdio.h
 hmi\date_to_timestamp.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\string.h
 hmi\date_to_timestamp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

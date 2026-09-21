@@ -254,5 +254,5 @@ hmi\min_ui.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdio.h
 hmi\min_ui.o: ../Middlewares/cJSON/cJSON.h
 hmi\min_ui.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 hmi\min_ui.o: ../BSP/ESP8266.h
-hmi\min_ui.o: ..\App\json_analysis.h
+hmi\min_ui.o: ..\User\json_analysis.h
 hmi\min_ui.o: ../BSP/ESP8266.h

@@ -46,4 +46,4 @@ hmi\rtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 hmi\rtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 hmi\rtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 hmi\rtc.o: ..\BSP\RTC.h
-hmi\rtc.o: ..\App\date_to_timestamp.h
+hmi\rtc.o: ../User/date_to_timestamp.h

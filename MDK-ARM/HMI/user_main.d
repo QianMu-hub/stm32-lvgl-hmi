@@ -270,7 +270,7 @@ hmi\user_main.o: ../BSP/ESP8266.h
 hmi\user_main.o: ../Middlewares/cJSON/cJSON.h
 hmi\user_main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 hmi\user_main.o: ..\User\ui_ir.h
-hmi\user_main.o: ..\App\json_analysis.h
+hmi\user_main.o: ..\User\json_analysis.h
 hmi\user_main.o: ../BSP/ESP8266.h
 hmi\user_main.o: ../BSP/ESP8266.h
 hmi\user_main.o: ../BSP/RTC.h

@@ -214,7 +214,7 @@ hmi\ui_ir.o: ../Middlewares/LVGL/src/lv_api_map_v9_1.h
 hmi\ui_ir.o: ../Middlewares/LVGL/src/lv_api_map_v9_2.h
 hmi\ui_ir.o: ../Middlewares/LVGL/src/lv_api_map_v9_3.h
 hmi\ui_ir.o: ..\User\ui_ir.h
-hmi\ui_ir.o: ..\App\json_analysis.h
+hmi\ui_ir.o: ..\User\json_analysis.h
 hmi\ui_ir.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\stdio.h
 hmi\ui_ir.o: ../Middlewares/cJSON/cJSON.h
 hmi\ui_ir.o: E:\Keil\core\ARM\ARMCC\Bin\..\include\string.h

@@ -964,6 +964,16 @@
               <FileType>1</FileType>
               <FilePath>..\User\city_config.c</FilePath>
             </File>
+            <File>
+              <FileName>date_to_timestamp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\date_to_timestamp.c</FilePath>
+            </File>
+            <File>
+              <FileName>json_analysis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\json_analysis.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1043,18 +1053,6 @@
         </Group>
         <Group>
           <GroupName>APP</GroupName>
-          <Files>
-            <File>
-              <FileName>json_analysis.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\App\json_analysis.c</FilePath>
-            </File>
-            <File>
-              <FileName>date_to_timestamp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\App\date_to_timestamp.c</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>cJSON</GroupName>
