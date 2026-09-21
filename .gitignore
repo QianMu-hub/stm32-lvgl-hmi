@@ -1,19 +1,23 @@
 # Keil MDK 编译产物
-MDK-ARM/*.o
-MDK-ARM/*.axf
-MDK-ARM/*.htm
-MDK-ARM/*.lnp
-MDK-ARM/*.map
-MDK-ARM/*.lst
-MDK-ARM/*.build_log.htm
-MDK-ARM/*.crf
-MDK-ARM/*.d
-MDK-ARM/*.dep
+MDK-ARM/Objects/
+MDK-ARM/Listing/
+MDK-ARM/Output/
 MDK-ARM/DebugConfig/
 MDK-ARM/RTE/
-MDK-ARM/Listing/
-MDK-ARM/Objects/
-MDK-ARM/Output/
+
+MDK-ARM/**/*.o
+MDK-ARM/**/*.axf
+MDK-ARM/**/*.htm
+MDK-ARM/**/*.lnp
+MDK-ARM/**/*.map
+MDK-ARM/**/*.lst
+MDK-ARM/**/*.build_log.htm
+MDK-ARM/**/*.crf
+MDK-ARM/**/*.d
+MDK-ARM/**/*.dep
+
+# 如果是 Windows 快捷方式 .lnk，也要加
+*.lnk
 
 # VS Code
 .vscode/
@@ -25,5 +29,5 @@ Thumbs.db
 # STM32CubeMX 临时文件
 .mxproject
 
-#API Keys
+# API Keys
 api_keys.h
