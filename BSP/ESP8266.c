@@ -30,10 +30,6 @@ char data_end[] = "+++"; //
 char get_weather_data[] = "\r\n";
 uint32_t time_start_time = 0;
 uint32_t time_end_time = 0;
-// uint8_t get_ip[]="AT+CIPDOMAIN=\"api.openweathermap.org\"\r\n";
-// uint8_t SSL[]="AT+CIPSTART=\"TCP\",\"www.bing.com\",443,,,5000\r\n";
-
-// int frame_ready;
 
 /**********************************************************************
  * 函数名称： isRX_BufferEmpty

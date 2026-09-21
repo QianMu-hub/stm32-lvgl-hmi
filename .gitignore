@@ -24,3 +24,6 @@ Thumbs.db
 
 # STM32CubeMX 临时文件
 .mxproject
+
+#API Keys
+api_keys.h

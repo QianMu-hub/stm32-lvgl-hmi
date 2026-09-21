@@ -11,7 +11,10 @@
 #include <string.h>
 
 /* OpenWeatherMap API Key (same as the original request) */
-#define CITY_APPID  "a02b9943bba781fd65348c0089ad8b5e"
+#include "api_keys.h"
+#ifndef CITY_APPID
+#define CITY_APPID  "OpenWeatherMapAPIKey"
+#endif
 
 static const city_item_t g_cities[] = {
     {"Ganzhou"},
