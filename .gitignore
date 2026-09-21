@@ -16,7 +16,6 @@ MDK-ARM/**/*.crf
 MDK-ARM/**/*.d
 MDK-ARM/**/*.dep
 
-# 如果是 Windows 快捷方式 .lnk，也要加
 *.lnk
 
 # VS Code
