@@ -28,8 +28,27 @@ typedef enum
 extern const uint8_t      ascii_font_8x16[][16];
 extern const uint8_t      ascii_font_6x8[][6];
 
+/**
+ * @brief  将有符号整数按十进制转换为字符串（自动带 '-' 号，不追加结束符）
+ * @param  str     输出字符串缓冲区，由调用方保证足够长度并预先初始化
+ * @param  number  需要转换的有符号整数
+ * @retval 无
+ */
 void func_int_to_str (char *str, int32_t number);
+/**
+ * @brief  将无符号整数按十进制转换为字符串（不追加结束符）
+ * @param  str     输出字符串缓冲区，由调用方保证足够长度并预先初始化
+ * @param  number  需要转换的无符号整数
+ * @retval 无
+ */
 void func_uint_to_str (char *str, uint32_t number);
+/**
+ * @brief  将浮点数转换为字符串：写入完整的整数部分，并在 point_bit 大于 0 时写出小数点与小数部分（不追加结束符）
+ * @param  str        输出字符串缓冲区，由调用方保证足够长度并预先初始化
+ * @param  number     需要转换的浮点数
+ * @param  point_bit  保留的小数位数，为 0 时不输出小数点
+ * @retval 无
+ */
 void func_double_to_str (char *str, double number, uint8_t point_bit);
 
 

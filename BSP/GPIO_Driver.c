@@ -1,6 +1,11 @@
 
 #include "GPIO_Driver.h"
 
+/**
+ * @brief  使能 GPIOB 时钟，把 PB2 配置为低速推挽输出（在 LVGL 任务中定时翻转，用作运行指示）
+ * @param  无
+ * @retval 无
+ */
 void ur_GPIO_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -20,6 +25,11 @@ void ur_GPIO_Init(void)
 
 }
 
+/**
+ * @brief  初始化 SPI1（主机/8 位/软件 NSS/16 分频）并使能，同时把 SCK(PA5)、MOSI(PA7) 复用及 LCD 的 RES/DC/CS 控制脚配置为输出
+ * @param  无
+ * @retval 无
+ */
 void ur_SPI1_Init(void)
 {
     // 使能 SPI1 时钟
@@ -74,6 +84,11 @@ void ur_SPI1_Init(void)
     // 清除可能存在的错误标志
     LL_SPI_ClearFlag_OVR(SPI1);	
 }
+/**
+ * @brief  初始化 DMA2 数据流 3：把内存数据搬到 SPI1->DR 用于 LCD 刷屏（源地址与传输长度在每次刷屏时另行设置），并使能传输完成中断
+ * @param  无
+ * @retval 无
+ */
 void ur_DMA_Init(void)
 {
 	LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_DMA2);

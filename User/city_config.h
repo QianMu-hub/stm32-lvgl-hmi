@@ -30,6 +30,11 @@ uint16_t city_get_current_index(void);
 
 /* Switch to next/prev city (wraps around) */
 int city_next(void);
+/**
+ * @brief  切换到城市列表中的上一个城市（到列表开头后循环到最后一个）
+ * @param  无
+ * @retval 恒为 0，表示切换成功
+ */
 int city_prev(void);
 
 /* Get current city English query name */

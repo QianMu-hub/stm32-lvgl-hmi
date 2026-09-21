@@ -3,6 +3,11 @@
 #include "UART.h"
 UART_HandleTypeDef uart6;
 
+/**
+ * @brief  初始化 ESP8266 通信所用串口 USART6：把 PC6(TX)/PC7(RX) 配为 USART6 复用功能，参数 115200-8-N-1，并使能 USART6 中断
+ * @param  无
+ * @retval 无
+ */
 void esp8266_uart_init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};

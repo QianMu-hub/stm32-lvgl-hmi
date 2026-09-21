@@ -10,6 +10,11 @@
 
 RTC_HandleTypeDef hrtc = {0};
 
+/**
+ * @brief  初始化 RTC：使能电源与备份域时钟，时钟源优先 LSE（起振失败自动降级为 LSI），并仅在首次上电（备份寄存器 RTC_BKP_DR1 未标记）写入 2026-01-01 12:00:00 默认时间
+ * @param  无
+ * @retval 无
+ */
 void RTC_Init(void)
 {
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};

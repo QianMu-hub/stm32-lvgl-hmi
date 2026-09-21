@@ -92,6 +92,11 @@ QueueHandle_t weather_queue;
 
 #define WEATHER_QUEUE_LENGTH 2 // 队列长度，可根据需要调整
 
+/**
+ * @brief  创建天气数据队列，供天气任务发送、LVGL 主任务接收解析后的天气消息
+ * @param  无
+ * @retval 无
+ */
 void create_weather_queue(void)
 {
     weather_queue = xQueueCreate(WEATHER_QUEUE_LENGTH, sizeof(weather_msg_t));
@@ -104,6 +109,11 @@ void create_weather_queue(void)
 /* ------------------------------------------------------------------ */
 /* 创建主屏                                                             */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  创建整个界面（主屏/标签栏/Home 页/Settings 页/状态栏），建立两个焦点分组并注册遥控器方向键回调，最后显示 Home 页
+ * @param  无
+ * @retval 无
+ */
 void ui_create(void)
 {
     ui_create_screen();
@@ -127,6 +137,11 @@ void ui_create(void)
     switch_page(0);
 }
 
+/**
+ * @brief  创建主屏幕根对象，设置 240x320 尺寸、浅灰背景，关闭滚动条后加载为当前活动屏幕
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_screen(void)
 {
     ui_screen = lv_obj_create(NULL);
@@ -139,6 +154,11 @@ static void ui_create_screen(void)
 /* ------------------------------------------------------------------ */
 /* 顶部标签栏（仅作当前页指示）                                          */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  创建顶部标签栏，内含 Home 与 Settings 两个标签块，用颜色高亮指示当前所在页面
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_tab_bar(void)
 {
     lv_obj_t *bar = lv_obj_create(ui_screen);
@@ -172,6 +192,11 @@ static void ui_create_tab_bar(void)
 /* ------------------------------------------------------------------ */
 /* Home 界面（天气 + 日期时间）                                          */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  创建 Home 天气页：日期/时间、城市、天气描述、温度标签与 Update Weather 按钮，并启动每秒刷新日期时间的定时器
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_home(void)
 {
     ui_panel_home = lv_obj_create(ui_screen);
@@ -233,6 +258,11 @@ static void ui_create_home(void)
 /* ------------------------------------------------------------------ */
 /* Settings 界面（下拉框 + 应用）                                       */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  创建 Settings 设置页：按 city_config 中的城市英文名生成城市下拉框并注册其释放事件，该页面默认隐藏
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_settings(void)
 {
     ui_panel_settings = lv_obj_create(ui_screen);
@@ -284,6 +314,11 @@ static void ui_create_settings(void)
 /* ------------------------------------------------------------------ */
 /* 底部状态栏 + 运行时间统计                                             */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  创建底部状态栏标签和运行时间标签，并启动每秒刷新运行时间的定时器
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_status_bar(void)
 {
     ui_status_label = lv_label_create(ui_screen);
@@ -306,6 +341,11 @@ static void ui_create_status_bar(void)
 /* ------------------------------------------------------------------ */
 /* 界面切换                                                            */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  切换页面：显示目标面板并隐藏另一个、更新标签栏高亮、把输入设备切到该页分组并聚焦默认控件
+ * @param  page  目标页面编号，0=Home，非 0 时表示 Settings
+ * @retval 无
+ */
 static void switch_page(uint8_t page)
 {
     lv_indev_t *indev = lv_indev_get_next(NULL); /* 当前唯一的 keypad 输入设备 */
@@ -344,16 +384,31 @@ static void switch_page(uint8_t page)
 /* ------------------------------------------------------------------ */
 /* 遥控器方向键：界面切换 + 界面内导航（由输入层调用，不进入 LVGL 控件）  */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  取得当前页面所使用的控件焦点分组
+ * @param  无
+ * @retval 当前页面对应的分组：Home 页返回 group_home，Settings 页返回 group_settings
+ */
 static lv_group_t *current_group(void)
 {
     return (current_page == 0) ? group_home : group_settings;
 }
 
+/**
+ * @brief  遥控器左键回调：跳转到上一页（共两页，即在 Home 与 Settings 之间切换）
+ * @param  无
+ * @retval 无
+ */
 static void ui_ir_page_left(void)
 {
     switch_page((current_page + 2 - 1) % 2); /* 上一页（两页时等价于切换） */
 }
 
+/**
+ * @brief  遥控器右键回调：跳转到下一页（Home → Settings → Home 循环）
+ * @param  无
+ * @retval 无
+ */
 static void ui_ir_page_right(void)
 {
     switch_page((current_page + 1) % 2);
@@ -420,6 +475,11 @@ static void ui_ir_up(void)
 /* ------------------------------------------------------------------ */
 /* 更新天气按钮                                                         */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  Update Weather 按钮点击回调：把温度与天气标签置为 Updating... 并通知天气任务立即重新获取数据
+ * @param  e  LVGL 事件对象（仅在事件码为 LV_EVENT_CLICKED 时执行更新）
+ * @retval 无
+ */
 static void btn_event_wheather_update(lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -435,6 +495,11 @@ static void btn_event_wheather_update(lv_event_t *e)
 /* ------------------------------------------------------------------ */
 /* 显示天气                                                             */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  解析已缓存的天气数据，把城市名、天气描述和格式化为一位小数的温度（含 °C）显示到 Home 页标签，并释放解析出的堆内存
+ * @param  无
+ * @retval 无
+ */
 static void put_wheather(void)
 {
     char *City = NULL;
@@ -461,6 +526,11 @@ static void put_wheather(void)
 /* ------------------------------------------------------------------ */
 /* 每秒刷新日期时间                                                     */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  日期时间定时器回调（每秒执行一次）：读取 RTC 并把日期、星期与时间刷新到 Home 页标签
+ * @param  timer  LVGL 定时器对象（本函数未使用）
+ * @retval 无
+ */
 static void ui_datetime_timer_cb(lv_timer_t *timer)
 {
     RTC_DateTypeDef sDate = {0};
@@ -481,6 +551,11 @@ static void ui_datetime_timer_cb(lv_timer_t *timer)
 /* ------------------------------------------------------------------ */
 /* 运行时间统计（开机/初始化后经过的时间）                                */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  按 lv_tick_get() 计算开机以来经过的时分秒并刷新运行时间标签
+ * @param  无
+ * @retval 无
+ */
 static void ui_update_uptime(void)
 {
     uint32_t sec = lv_tick_get() / 1000; /* 毫秒 → 秒 */
@@ -491,6 +566,11 @@ static void ui_update_uptime(void)
                           (unsigned long)h, (unsigned long)m, (unsigned long)s);
 }
 
+/**
+ * @brief  运行时间定时器回调（每秒执行一次）：调用 ui_update_uptime() 刷新运行时间显示
+ * @param  timer  LVGL 定时器对象（本函数未使用）
+ * @retval 无
+ */
 static void ui_uptime_timer_cb(lv_timer_t *timer)
 {
     ui_update_uptime();
@@ -499,6 +579,11 @@ static void ui_uptime_timer_cb(lv_timer_t *timer)
 /* ------------------------------------------------------------------ */
 /* LVGL 主任务：驱动渲染、消费天气队列                                  */
 /* ------------------------------------------------------------------ */
+/**
+ * @brief  LVGL 主任务：循环调用 lv_timer_handler() 刷新界面、每 500ms 翻转 PB2 心跳灯，并消费天气队列更新城市/温度/天气标签
+ * @param  pvParameters  FreeRTOS 任务参数（本任务未使用，创建时传 NULL）
+ * @retval 无（任务体为死循环，不会返回）
+ */
 void LVGL_task(void *pvParameters)
 {
     static uint32_t last_tick = 0;

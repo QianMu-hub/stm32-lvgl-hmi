@@ -205,6 +205,11 @@ void MX_TIM3_Init(void)
 
 }
 
+/**
+ * @brief  TIM 基础时基初始化回调（MSP）：根据句柄判断并使能 TIM1 或 TIM2 的时钟
+ * @param  tim_baseHandle  TIM 句柄指针，其 Instance 用于判断是 TIM1 还是 TIM2
+ * @retval 无
+ */
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
 {
 
@@ -232,6 +237,11 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
   }
 }
 
+/**
+ * @brief  TIM PWM 初始化回调（MSP）：当句柄为 TIM3 时使能 TIM3 的时钟
+ * @param  tim_pwmHandle  TIM 句柄指针，本工程中只处理 TIM3
+ * @retval 无
+ */
 void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* tim_pwmHandle)
 {
 
@@ -247,6 +257,11 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* tim_pwmHandle)
   /* USER CODE END TIM3_MspInit 1 */
   }
 }
+/**
+ * @brief  TIM 引脚初始化回调（MSP）：按句柄把定时器 PWM 输出引脚（TIM1-PA8；TIM2-PA2/PA15/PB3；TIM3-PB4）配置为复用推挽输出
+ * @param  timHandle  TIM 句柄指针，其 Instance 决定配置哪一组引脚
+ * @retval 无
+ */
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
 {
 
@@ -322,6 +337,11 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
 
 }
 
+/**
+ * @brief  TIM 基础时基反初始化回调（MSP）：根据句柄关闭 TIM1 或 TIM2 的时钟
+ * @param  tim_baseHandle  TIM 句柄指针，其 Instance 用于判断是 TIM1 还是 TIM2
+ * @retval 无
+ */
 void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 {
 
@@ -349,6 +369,11 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
   }
 }
 
+/**
+ * @brief  TIM PWM 反初始化回调（MSP）：当句柄为 TIM3 时关闭 TIM3 的时钟
+ * @param  tim_pwmHandle  TIM 句柄指针，本工程中只处理 TIM3
+ * @retval 无
+ */
 void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* tim_pwmHandle)
 {
 

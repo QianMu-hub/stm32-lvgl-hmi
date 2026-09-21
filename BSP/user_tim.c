@@ -4,6 +4,11 @@
 
 
  TIM_HandleTypeDef htim2;  
+ /**
+  * @brief  初始化并以 84MHz 时钟启动 TIM2 作为独立计时器（预分频 0、周期 0xFFFFFFFF），为 system_get_ns() 提供时间基准
+  * @param  无
+  * @retval 无
+  */
  void IndependentTimer_Init(void)
  {
      __HAL_RCC_TIM2_CLK_ENABLE();  

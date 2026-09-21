@@ -46,6 +46,11 @@ void Ir_Test_Task(void *pvParameters);
 //	lv_group_add_obj(g, n);
 // }
 
+/**
+ * @brief  旧版界面入口（本文件整体被 #if 0 屏蔽）：依次创建主屏、标签栏与内容面板、底部状态栏
+ * @param  无
+ * @retval 无
+ */
 void ui_create(void)
 {
     ui_create_screen();
@@ -53,6 +58,11 @@ void ui_create(void)
     ui_create_status_bar();
 }
 
+/**
+ * @brief  创建主屏幕根对象，设置 240x320 尺寸、浅灰背景并加载为当前活动屏幕
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_screen(void)
 {
     ui_screen = lv_obj_create(NULL);
@@ -66,6 +76,11 @@ static lv_obj_t *ui_content;
 static lv_obj_t *ui_panel_home;
 static lv_obj_t *ui_panel_settings;
 
+/**
+ * @brief  标签栏按钮点击回调：按按钮 user_data（0=Home，1=Settings）显示对应面板并隐藏另一个面板
+ * @param  e  LVGL 事件对象，通过 lv_event_get_target() 取得被点击的按钮
+ * @retval 无
+ */
 static void tab_btn_event_cb(lv_event_t *e)
 {
     lv_obj_t *btn = lv_event_get_target(e);
@@ -84,6 +99,11 @@ static void tab_btn_event_cb(lv_event_t *e)
     // 可选：改变按钮样式表示选中
 }
 
+/**
+ * @brief  创建标签栏（Home/Settings 两个按钮）、内容容器以及 Home、Settings 两个面板（含天气标签、更新按钮和城市下拉框）
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_tabview(void)
 {
     // ---- 标签栏（两个按钮）----
@@ -185,6 +205,11 @@ static void ui_create_tabview(void)
     lv_obj_center(btn_label2);
 }
 
+/**
+ * @brief  创建底部状态栏标签并显示初始文本 Status: Ready
+ * @param  无
+ * @retval 无
+ */
 static void ui_create_status_bar(void)
 {
     ui_status_label = lv_label_create(ui_screen);
@@ -193,6 +218,11 @@ static void ui_create_status_bar(void)
     lv_obj_set_style_text_color(ui_status_label, lv_color_hex(0x333333), 0);
 }
 
+/**
+ * @brief  Settings 面板按钮事件回调：读取下拉框当前选项并显示到状态栏（其注册处目前被注释掉，暂不会触发）
+ * @param  e  LVGL 事件对象
+ * @retval 无
+ */
 static void btn_event_cb(lv_event_t *e)
 {
     lv_obj_t *btn = lv_event_get_target(e);
@@ -204,6 +234,11 @@ static void btn_event_cb(lv_event_t *e)
     }
 }
 
+/**
+ * @brief  更新天气按钮点击回调：把城市、温度、天气标签置为 Updating... 并通知天气任务立即重新获取数据
+ * @param  e  LVGL 事件对象（仅在事件码为 LV_EVENT_CLICKED 时执行更新）
+ * @retval 无
+ */
 static void btn_event_wheather_update(lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -222,6 +257,11 @@ QueueHandle_t weather_queue;
 
 #define WEATHER_QUEUE_LENGTH 2 // 队列长度，可根据需要调整
 
+/**
+ * @brief  创建天气数据队列，供天气任务发送、LVGL 主任务接收解析后的天气消息
+ * @param  无
+ * @retval 无
+ */
 void create_weather_queue(void)
 {
     weather_queue = xQueueCreate(WEATHER_QUEUE_LENGTH, sizeof(weather_msg_t));
@@ -249,6 +289,11 @@ static void ui_datetime_timer_cb(lv_timer_t *timer)
                           sTime.Hours, sTime.Minutes, sTime.Seconds);
 }
 
+/**
+ * @brief  LVGL 主任务：循环调用 lv_timer_handler() 刷新界面、约每 1 秒翻转 PB2 心跳灯，并消费天气队列更新城市/温度/天气标签
+ * @param  pvParameters  FreeRTOS 任务参数（本任务未使用，创建时传 NULL）
+ * @retval 无（任务体为死循环，不会返回）
+ */
 void LVGL_task(void *pvParameters)
 {
     while (1)

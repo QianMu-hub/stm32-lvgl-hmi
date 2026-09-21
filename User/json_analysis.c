@@ -1,6 +1,13 @@
 
 #include "json_analysis.h"
 #include "RTC.h"
+/**
+ * @brief  读取 ESP8266 缓冲区中的完整 HTTP 响应，先按其中的 Date 头同步 RTC，再用 cJSON 解析出城市名、温度和天气描述。
+ * @param  City  输出参数，存放城市名的指针的地址；取到 JSON 的 "name" 时用 pvPortMalloc 分配并拷贝，失败时不改写。
+ * @param  Temp  输出参数，温度（摄氏度）的地址；取到 main.temp 时写入，失败时不改写。
+ * @param  Desc  输出参数，存放天气描述的指针的地址；取到 weather[0].description 时用 pvPortMalloc 分配并拷贝。
+ * @retval 无（无数据、找不到响应体或 JSON 解析失败时直接返回，输出参数保持调用前的值）
+ */
 void parse_weather(char **City, double *Temp, char **Desc)
 {
 	static char http_response[1024] = {0};

@@ -18,6 +18,11 @@
 
 //extern void IRReceiver_IRQ_Callback(void);
 
+/**
+ * @brief  PD15（红外接收头）外部中断服务函数：判断并清除 EXTI15 中断标志后，调用红外解码回调记录中断时刻
+ * @param  无
+ * @retval 无
+ */
 void EXTI15_10_IRQHandler(void)
 {
     // 检查是否是 EXTI Line 15 触发的中断
@@ -32,6 +37,11 @@ void EXTI15_10_IRQHandler(void)
     }
 }
 
+/**
+ * @brief  DMA2 数据流 3 传输完成中断服务函数：清标志并关闭 DMA 与 SPI 的 DMA 请求，等待 SPI 空闲后拉高 LCD 片选，再通知 LVGL 本次刷屏完成
+ * @param  无
+ * @retval 无
+ */
 void DMA2_Stream3_IRQHandler(void)
 {
     // 检查传输完成标志

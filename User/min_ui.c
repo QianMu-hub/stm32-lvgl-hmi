@@ -1,3 +1,4 @@
+#if 0
 #include <stdlib.h>
 #include "lvgl.h"
 #include "min_ui.h"
@@ -5,7 +6,11 @@
 #include "json_analysis.h"
 
 //static lv_obj_t *info_label = NULL;
-/* 按钮点击事件回调 */
+/**
+ * @brief  "Do" 按钮点击回调：调用 Get_Weather_Data() 通过 ESP8266 立即发起一次天气数据请求。
+ * @param  e  LVGL 事件对象（由 LVGL 传入，本函数只用它判断事件类型）
+ * @retval 无
+ */
 static void btn_event_wifi_sc(lv_event_t * e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -17,6 +22,11 @@ static void btn_event_wifi_sc(lv_event_t * e)
     }
 }
 
+/**
+ * @brief  "AP List" 按钮点击回调：解析一次天气数据，把解析出的城市名显示到按钮内的标签上，随后释放该字符串（温度与描述此处未使用）。
+ * @param  e  LVGL 事件对象（由 LVGL 传入，本函数只用它判断事件类型并取得触发按钮）
+ * @retval 无
+ */
 static void btn_event_cb(lv_event_t * e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -31,7 +41,11 @@ static void btn_event_cb(lv_event_t * e)
     }
 }
 
-/* 创建简单UI */
+/**
+ * @brief  在活动屏幕上创建演示界面：按纵向居中布局生成 "AP List" 按钮与 "Do" 按钮（各含一个标签），都加入默认输入组并把第一个按钮设为初始焦点。
+ * @param  无
+ * @retval 无
+ */
 void create_demo_ui(void)
 {
     /* 获取默认组（group1），确保输入设备已关联该组 */
@@ -105,3 +119,4 @@ void create_demo_ui(void)
 //	Data_Read(data);
 //	lv_label_set_text(info_label, data);
 //}
+#endif 
