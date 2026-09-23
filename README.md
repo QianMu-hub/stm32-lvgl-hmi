@@ -11,7 +11,7 @@ STM32 LVGL HMI
 
 已完成相关硬件驱动
 
-提供最小化 UI 实现（User/min_ui.c）与 JSON 解析模块（User/json_analysis.c）
+提供最小化 UI 实现、网络连接 、 红外交互
 
 支持日期时间戳转换（User/date_to_timestamp.c）
 
