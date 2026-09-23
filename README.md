@@ -61,5 +61,4 @@ git clone https://github.com/QianMu-hub/stm32-lvgl-hmi.git
 │   ├── json_analysis.c/.h    # JSON 解析
 │   ├── ui_ir.c/.h           # UI 界面
 │   └── user_main.c          # 程序入口 
-├── HMI.ioc           # STM32CubeMX 配置文件
 └── .gitignore
