@@ -14,19 +14,19 @@ TaskHandle_t weather_task_handle;
 volatile uint8_t is_esp8266_ready = 0;
 
 uint8_t UART_Temp;
-const char AT[] = "AT\r\n";
-const char RST[] = "AT+RST\r\n";
-const char ATCMD[] = "AT+HTTPCLIENT=?\r\n";
-const char ATE0[] = "ATE0\r\n";
-const char AT_GMR[] = "AT+GMR\r\n";
-const char wifi_sc[] = "AT+CWSTATE?\r\n";
-const char connect_wifi[] = "AT+CWJAP=\"H-03-1-2G\",\"jiang2019\"\r\n";
-const char station_mode[] = "AT+CWMODE=1\r\n";
-const char TCP[] = "AT+CIPSTART=\"TCP\",\"15.235.222.69\",80\r\n";
-const char CIPMODE[] = "AT+CIPMODE=1\r\n";
-const char CIPSEND[] = "AT+CIPSEND\r\n";
-const char CIPCLOSE[] = "AT+CIPCLOSE\r\n";
-const char data_end[] = "+++"; //
+char AT[] = "AT\r\n";
+char RST[] = "AT+RST\r\n";
+char ATCMD[] = "AT+HTTPCLIENT=?\r\n";
+char ATE0[] = "ATE0\r\n";
+char AT_GMR[] = "AT+GMR\r\n";
+char wifi_sc[] = "AT+CWSTATE?\r\n";
+char connect_wifi[] = "AT+CWJAP=\"H-03-1-2G\",\"jiang2019\"\r\n";
+char station_mode[] = "AT+CWMODE=1\r\n";
+char TCP[] = "AT+CIPSTART=\"TCP\",\"15.235.222.69\",80\r\n";
+char CIPMODE[] = "AT+CIPMODE=1\r\n";
+char CIPSEND[] = "AT+CIPSEND\r\n";
+char CIPCLOSE[] = "AT+CIPCLOSE\r\n";
+char data_end[] = "+++"; //
 uint32_t time_start_time = 0;
 uint32_t time_end_time = 0;
 

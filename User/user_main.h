@@ -1,3 +1,6 @@
+#ifndef __USER_MAIN_H
+#define __USER_MAIN_H
+
 #include "stm32f4xx_hal.h"
 #include "FreeRTOS.h"
 #include "GPIO_Driver.h"
@@ -11,11 +14,6 @@
 #include "ui_ir.h"
 #include "ESP8266.h"
 #include "RTC.h"
-
-#ifndef __USER_MAIN_H
-#define __USER_MAIN_H
-
-
 
 
 #endif

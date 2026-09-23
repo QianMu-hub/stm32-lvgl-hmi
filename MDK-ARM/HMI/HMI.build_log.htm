@@ -21,14 +21,35 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-D:\Documents\STM32 Project\HMI\MDK-ARM\HMI.uvprojx
+d:\Documents\STM32 Project\HMI\MDK-ARM\HMI.uvprojx
 Project File Date:  09/21/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'E:\Keil\core\ARM\ARMCC\Bin'
 Build target 'HMI'
 Note: source file '..\Middlewares\LVGL\src\others\vg_lite_tvg\vg_lite_matrix.c' - object file renamed from 'HMI\vg_lite_matrix.o' to 'HMI\vg_lite_matrix_1.o'.
-"HMI\HMI.axf" - 0 Error(s), 0 Warning(s).
+compiling user_main.c...
+../User/app_mem_layout.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Middlewares/LVGL/src/drivers/uefi/lv_uefi_context.h(71): warning:  #1-D: last line of file ends without a newline
+  #endif //__LV_UEFI_CONTEXT_H__
+../Middlewares/LVGL/src/drivers/uefi/lv_uefi_indev.h(108): warning:  #1-D: last line of file ends without a newline
+  #endif //__LV_UEFI_INDEV_H__
+../Middlewares/LVGL/src/drivers/uefi/lv_uefi_display.h(65): warning:  #1-D: last line of file ends without a newline
+  #endif //__LV_UEFI_DISPLAY_H__
+..\User\min_ui.h(27): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\User\user_main.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\User\user_main.c: 6 warnings, 0 errors
+linking...
+HMI\HMI.sct(14): warning: L6314W: No section matches pattern *(.disp_buf*).
+HMI\HMI.sct(18): warning: L6314W: No section matches pattern *(.ccmram).
+HMI\HMI.sct(19): warning: L6314W: No section matches pattern *(.ccmram*).
+Program Size: Code=241014 RO-data=21330 RW-data=48748 ZI-data=81108  
+Finished: 0 information, 3 warning and 0 error messages.
+FromELF: creating hex file...
+"HMI\HMI.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -51,7 +72,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE@5.6.0
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:10
 </pre>
 </body>
 </html>
