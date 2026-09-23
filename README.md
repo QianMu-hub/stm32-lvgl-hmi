@@ -37,7 +37,7 @@ MDK-ARM（Keil）或 vscode 项目开发环境
 git clone https://github.com/QianMu-hub/stm32-lvgl-hmi.git
 
 2. 打开工程
-使用 MDK-ARM（Keil）打开 MDK-ARM 目录下的工程文件，或使用 STM32CubeIDE 导入项目。
+使用 MDK-ARM（Keil）打开 MDK-ARM 目录下的工程文件，或使用vscode插件导入项目。
 
 3. 编译与烧录
 在 IDE 中编译工程，通过调试器将固件烧录至 STM32 开发板。
