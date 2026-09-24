@@ -40,7 +40,7 @@ git clone https://github.com/QianMu-hub/stm32-lvgl-hmi.git
 使用 MDK-ARM（Keil）打开 MDK-ARM 目录下的工程文件，或使用vscode插件导入项目。
 
 3. 编译与烧录
-在 IDE 中编译工程，通过调试器将固件烧录至 STM32 开发板。
+自行完成api key的宏定义并导入，在 IDE 中编译工程，通过调试器将固件烧录至 STM32 开发板。
 
 目录结构
 .
@@ -55,10 +55,10 @@ git clone https://github.com/QianMu-hub/stm32-lvgl-hmi.git
 │   ├── lv_port_indev.c   # 输入驱动移植
 │   └── lv_port_indev.h
 ├── User/             # 用户应用代码
-│   ├── app_mem_layout.h      # 内存布局定义
-│   ├── city_config.c/.h      # 城市配置
-│   ├── date_to_timestamp.c/.h # 日期转换
-│   ├── json_analysis.c/.h    # JSON 解析
-│   ├── ui_ir.c/.h           # UI 界面
-│   └── user_main.c          # 程序入口 
+│   ├── app_mem_layout.h        # 内存布局定义
+│   ├── city_config.c/.h        # 城市配置
+│   ├── date_to_timestamp.c/.h  # 日期转换
+│   ├── json_analysis.c/.h      # JSON 解析
+│   ├── ui_ir.c/.h              # UI 界面
+│   └── user_main.c             # 程序入口 
 └── .gitignore

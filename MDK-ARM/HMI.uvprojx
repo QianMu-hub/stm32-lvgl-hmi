@@ -945,16 +945,6 @@
               <FilePath>..\User\user_main.c</FilePath>
             </File>
             <File>
-              <FileName>min_ui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\min_ui.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_framework.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\ui_framework.c</FilePath>
-            </File>
-            <File>
               <FileName>ui_ir.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\ui_ir.c</FilePath>
@@ -1018,11 +1008,6 @@
               <FileName>GPIO_Driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\GPIO_Driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcd_pins.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\lcd_pins.c</FilePath>
             </File>
             <File>
               <FileName>ST7789.c</FileName>

@@ -1,17 +1,8 @@
-/**
- * @file    city_config.c
- * @brief   Major China cities config: build weather HTTP request with selected city.
- *
- * All city names are ASCII English (recognized by OpenWeatherMap).
- * Default city is Ganzhou.
- */
-
 #include "city_config.h"
 #include <stdio.h>
 #include <string.h>
 
-/* OpenWeatherMap API Key (same as the original request) */
-#include "api_keys.h"
+#include "api_keys.h"//按下方格式宏定义即可
 #ifndef CITY_APPID
 #define CITY_APPID  "OpenWeatherMapAPIKey"
 #endif

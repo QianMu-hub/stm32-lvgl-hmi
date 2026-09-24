@@ -259,34 +259,4 @@ int parse_http_date_to_rtc(const char *date,
 }
 #endif /* USE_HAL_DRIVER */
 
-/* ---------------------------------------------------------------
- * 简易自测（仅编译测试时用）
- * --------------------------------------------------------------- */
-#ifdef DATE_TO_TIMESTAMP_TEST
-int main(void)
-{
-    const char *s = "Wed, 26 Aug 2026 07:45:03 GMT";
-    printf("Date: %s\n", s);
-    printf("Timestamp: %ld\n", parse_http_date_to_timestamp(s));
 
-    /* 验证: 1970-01-01 00:00:00 -> 0 */
-    printf("epoch check: %ld\n",
-           parse_http_date_to_timestamp("Thu, 01 Jan 1970 00:00:00 GMT"));
-    /* 验证: 2000-01-01 00:00:00 -> 946684800 */
-    printf("2000 check:  %ld\n",
-           parse_http_date_to_timestamp("Sat, 01 Jan 2000 00:00:00 GMT"));
-
-#if defined(USE_HAL_DRIVER)
-    RTC_DateTypeDef d = {0};
-    RTC_TimeTypeDef t = {0};
-    if (parse_http_date_to_rtc(s, &d, &t) == 0)
-    {
-        printf("RTC date: WDay=%u %u/%u/%u\n",
-               d.WeekDay, d.Date, d.Month, 2000U + d.Year);
-        printf("RTC time: %02u:%02u:%02u\n",
-               t.Hours, t.Minutes, t.Seconds);
-    }
-#endif
-    return 0;
-}
-#endif
