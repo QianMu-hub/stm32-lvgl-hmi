@@ -122,6 +122,7 @@ uint8_t AT_Send_pro(char *cmd, char *reply, uint16_t timeout)
 
 	if (reply != NULL)
 	{
+		HAL_UART_Transmit_IT(&uart6, (uint8_t *)cmd, size);
 		uint32_t start_tick = HAL_GetTick();		   // 记录开始时间
 		uint8_t match_index = 0;					   // 匹配索引
 		while ((HAL_GetTick() - start_tick) < timeout) // 等待超时
